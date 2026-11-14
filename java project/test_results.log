@@ -1,0 +1,50 @@
+============================================
+  Running Database Tests
+============================================
+==============================================
+  Smart Expense Tracker -- DB Test Suite
+==============================================
+
+
+[>] Test 1: Database Connection
+Connection test failed: No suitable driver found for jdbc:sqlite:expense_tracker.db
+  [FAIL] Connection FAILED.
+
+[>] Test 2: Table Initialisation
+? Failed to initialize database: No suitable driver found for jdbc:sqlite:expense_tracker.db
+java.sql.SQLException: No suitable driver found for jdbc:sqlite:expense_tracker.db
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:708)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:253)
+	at com.expensetracker.db.DatabaseConnection.getConnection(DatabaseConnection.java:72)
+	at com.expensetracker.db.DatabaseManager.initializeDatabase(DatabaseManager.java:66)
+	at com.expensetracker.db.DatabaseTest.main(DatabaseTest.java:48)
+  [PASS] Tables created / verified.
+
+[>] Test 3: Insert User
+Error adding user: No suitable driver found for jdbc:sqlite:expense_tracker.db
+Error fetching user by email: No suitable driver found for jdbc:sqlite:expense_tracker.db
+  [FAIL] User insert FAILED.
+
+[>] Test 4: Fetch User by ID (-1)
+Error fetching user: No suitable driver found for jdbc:sqlite:expense_tracker.db
+  [FAIL] Fetch FAILED for id = -1
+
+[>] Test 5: Insert Expense
+Error adding expense: No suitable driver found for jdbc:sqlite:expense_tracker.db
+  [FAIL] Expense insert FAILED.
+
+[>] Test 6: Fetch All Expenses
+Error fetching expenses: No suitable driver found for jdbc:sqlite:expense_tracker.db
+  [FAIL] No expenses found.
+
+[>] Test 7: Fetch Expenses by User ID (-1)
+Error fetching expenses by user: No suitable driver found for jdbc:sqlite:expense_tracker.db
+  [FAIL] No expenses found for user -1.
+
+[>] Test 8: Total Expenses
+Error calculating total: No suitable driver found for jdbc:sqlite:expense_tracker.db
+  [PASS] Total = Rs 0.00
+
+==============================================
+  Results:  2 passed  |  6 failed  |  8 total
+==============================================
